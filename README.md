@@ -23,14 +23,18 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 | ---------------------------- | ---------------------------------------------------------------------- |
 | **🔍 Verify Explicitly**        | 🔐 SSH key-only access, 🛡️ MFA with Google Authenticator, 📜 audit logs         |
 | **🔑 Least Privilege Access**   | 👥 Role-based groups, 🔒 limited sudo permissions for users                  |
-| **🚨 Assume Breach**            | 📊 System auditing (auditd), 🛡️ AppArmor enforcement, 🔥 network firewall       |
+| **🚨 Assume Breach**            | 📊 System auditing (auditd), 🛡️ SELinux enforcement, 🔥 network firewall       |
 | **🌐 Micro-Segmentation**       | 🚧 Restrictive iptables rules allowing only essential traffic             |
 | **📈 Continuous Monitoring**    | 📋 Audit rules on key files, ⚙️ process accounting, ⏰ cron-based checks        |
 | **👤 User/Posture Enforcement** | 🔒 MFA enforced, 🚪 SSH access limited to authorized disaster recovery users |
 
 ### 1. Create Disaster Recovery Users
    
-### 📷 Screenshot Placeholder
+![pznctXd](https://github.com/user-attachments/assets/2b99215b-dea1-4402-aa98-45f4962b641a)
+
+-----
+
+![1rtjxHx](https://github.com/user-attachments/assets/56283ef5-8eb1-4120-90a9-de76340a39fb)
 
 #### Summary:
 #### I created three disaster recovery user accounts — drc_jane, drc_mike, and drc_sarah — to represent my recovery team who will securely access the system during an incident.
@@ -39,7 +43,11 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ### 2. Create and Assign Groups for Role-Based Access
 
-### 📷 Screenshot Placeholder
+![M2XoWff](https://github.com/user-attachments/assets/4aba9e65-8eb5-4202-a497-fc21465c0908)
+
+-----
+
+![rwYqfVJ](https://github.com/user-attachments/assets/9e80c4f1-4802-4c31-96a9-f39e68b136a8)
 
 #### Summary:
 #### I set up two groups — auditing and recovery — to enforce role-based access control. I assigned Jane and Sarah to auditing for monitoring tasks, and Mike to recovery for restoration duties.
@@ -50,13 +58,21 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
    
 #### Edit /etc/ssh/sshd_config to include:
 
-### 📷 Screenshot Placeholder
+![UbOHYfx](https://github.com/user-attachments/assets/b64ba73a-ad59-46f0-b64c-3448e66b1c24)
+
+-----
+
+![0eDhEq9](https://github.com/user-attachments/assets/101eba43-1fb4-4d1d-8987-75751a137a2a)
+
+-----
+
+![YbXMj72](https://github.com/user-attachments/assets/0faa639c-4519-4aca-aa6f-c7d13f46fe2a)
 
 #### Restart SSH:
 
-### 📷 Screenshot Placeholder
+![wwI8IXF](https://github.com/user-attachments/assets/3bdbdaf7-cfd6-4361-bd41-2d0c7c904fc5)
 
-#### Manually set up SSH keys in each user’s ~/.ssh/authorized_keys.
+-----
 
 #### Summary:
 #### I locked down SSH to disallow passwords and root login, allowing only my disaster recovery users to connect via SSH keys. This enhances security by preventing unauthorized password access.
@@ -67,17 +83,27 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
    
 #### Install PAM module:
 
-### 📷 Screenshot Placeholder
+![L6f3NCH](https://github.com/user-attachments/assets/b14e9927-a2ce-48bd-b82f-013a6f47c425)
+
+-----
 
 #### Edit /etc/pam.d/sshd and add:
 
-### 📷 Screenshot Placeholder
+![t5Qw5Y3](https://github.com/user-attachments/assets/84bf3eff-82b4-42f2-bfc6-8fc221532524)
+
+-----
 
 #### Confirm ChallengeResponseAuthentication yes in /etc/ssh/sshd_config and restart SSH.
 
+![aTolmpB](https://github.com/user-attachments/assets/3e2915d6-70ba-42af-8521-88f37c286c37)
+
+-----
+
 #### Each user runs to set up MFA.
 
-### 📷 Screenshot Placeholder
+![t4aJtY5](https://github.com/user-attachments/assets/09e6a6b9-7f8c-4a57-bb52-c5b74623f168)
+
+-----
 
 #### Summary:
 #### I enabled MFA for SSH access using Google Authenticator. This requires users to provide a time-based code in addition to their SSH key, adding a strong second layer of identity verification.
@@ -88,8 +114,9 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
    
 #### Edit sudoers with sudo visudo to add:
 
-### 📷 Screenshot Placeholder
+![ULJ4wY0](https://github.com/user-attachments/assets/df977c0d-27df-4e7f-932d-325a7cafc27e)
 
+-----
 #### Summary:
 #### I tailored sudo permissions to follow least-privilege principles. Jane and Sarah get limited commands for auditing, while Mike has full sudo rights for recovery tasks.
 
@@ -97,19 +124,27 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ### 6. Enable and Configure Auditd for Monitoring Critical Files
 
-### 📷 Screenshot Placeholder
+![KaexAjO](https://github.com/user-attachments/assets/a02e04bf-e03e-4d96-8643-901206e596d6)
+
+-----
+
+![cRjI2CT](https://github.com/user-attachments/assets/2de3a030-1144-4f77-a8fa-60b898153402)
+
+-----
 
 #### Summary:
 #### I installed auditd to continuously monitor critical files like /etc/passwd and /etc/sudoers, so I can detect any unauthorized changes in real time.
 
 ----
 
-### 7. Enforce Mandatory Access Controls with AppArmor
+### 7. Enforce Mandatory Access Controls with SELinux
 
-### 📷 Screenshot Placeholder
+![6DSoEWu](https://github.com/user-attachments/assets/3a2fbcae-8ebd-4176-876d-6b2876bb6925)
+
+-----
 
 #### Summary:
-#### I enabled AppArmor to enforce mandatory access controls on critical system services like SSH, restricting their capabilities to reduce risk from potential exploits.
+#### I enabled SELinux to enforce mandatory access controls on critical system services like SSH, restricting their capabilities to reduce risk from potential exploits.
 
 ----
 
@@ -117,15 +152,17 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
    
 #### Flush rules and set default policy to DROP:
 
-### 📷 Screenshot Placeholder
+![l9tvVFc](https://github.com/user-attachments/assets/9ecaa589-c7b7-4eef-87e6-59ec826b044c)
+
+-----
 
 #### Allow essential traffic:
 
-### 📷 Screenshot Placeholder
+![23gopOV](https://github.com/user-attachments/assets/49a72fa3-bbe9-442e-9ad5-39de31815210)
 
-#### Save rules:
+-----
 
-### 📷 Screenshot Placeholder
+![mopr4On](https://github.com/user-attachments/assets/8406a14e-693e-46dd-b4ad-13519f88a4da)
 
 #### Summary:
 #### I set strict firewall rules allowing only essential traffic: SSH, DNS, HTTP, and HTTPS. All other connections are blocked by default, enforcing micro-segmentation and limiting network exposure.
@@ -134,7 +171,11 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ### 9. Enable Command and System Activity Logging
 
-### 📷 Screenshot Placeholder
+![cAzpZtv](https://github.com/user-attachments/assets/eaa80d94-af19-4e6c-8abd-ad4aba452a7b)
+
+-----
+
+
 
 #### Summary:
 #### I installed process accounting tools to log all command executions and system activities. This helps me continuously monitor user behavior and system events.
@@ -145,19 +186,19 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 #### Create /usr/local/bin/monitor_passwd.sh with the following:
 
-### 📷 Screenshot Placeholder
-
 #### Make executable:
-
-### 📷 Screenshot Placeholder
 
 #### Add to cron (run every 5 minutes):
 
-### 📷 Screenshot Placeholder
+![cAzpZtv](https://github.com/user-attachments/assets/b9820590-3ab9-4717-ab18-794b6938f2a3)
+
+-----
 
 #### Add line:
 
-### 📷 Screenshot Placeholder
+![AvurrZH](https://github.com/user-attachments/assets/846f5964-61dc-42e4-a9a3-0fec8cf3eca8)
+
+-----
 
 #### Summary:
 #### I automated monitoring of critical file changes and scripted an immediate lockdown of recovery user accounts if /etc/passwd is modified, proactively protecting against potential breaches.
@@ -182,7 +223,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 - **Journalctl**: System log viewer for reviewing real-time system events and alerts.
 
 ## 🧱 System Hardening
-- **AppArmor**: Mandatory Access Control (MAC) for key applications such as SSH daemon.
+- **SELinux**: Mandatory Access Control (MAC) for key applications such as SSH daemon.
 - **SSH Configuration (`sshd_config`)**:
   - PasswordAuthentication disabled
   - Root login disabled
@@ -202,4 +243,4 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
   - Runs the security script every 5 minutes to maintain a responsive security posture.
 
 ## 🐧 Operating System
-- **Ubuntu Linux** (Debian-based distribution)
+- **CentOS** 
