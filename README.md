@@ -30,7 +30,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux CentOS server, I’ve 
    
 ![pznctXd](https://github.com/user-attachments/assets/2b99215b-dea1-4402-aa98-45f4962b641a)
 
------
+--
 
 ![1rtjxHx](https://github.com/user-attachments/assets/56283ef5-8eb1-4120-90a9-de76340a39fb)
 
