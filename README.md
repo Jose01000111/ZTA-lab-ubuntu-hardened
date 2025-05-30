@@ -15,4 +15,4 @@
 
 ####   -Strong identity verification
 
-This lab lets me build a hardened Ubuntu server, create a ZTA-compliant environment, and onboard disaster recovery users securely—helping me grow my skills creatively and practically.
+#### This lab lets me build a hardened Ubuntu server, create a ZTA-compliant environment, and onboard disaster recovery users securely—helping me grow my skills creatively and practically.
