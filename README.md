@@ -12,13 +12,12 @@ I’m doing this lab to test Linux’s power and flexibility by tackling a real-
 
 - 🔒 Strict Zero Trust Architecture (ZTA)  
 - 🛡️ Least-privilege access  
-- 🔑 Strong identity verification  
+- 🔑 Strong identity verification
+  
+### Mapping Zero Trust Tenets to Linux Implementation
 
-This lab lets me:
-
-- 🖥️ Build a hardened Ubuntu server  
-- 🏗️ Create a ZTA-compliant environment  
-- 👥 Onboard disaster recovery users securely  
+To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve mapped each core ZTA principle to specific Linux-based security controls and practices. This chart summarizes how the lab’s Linux configurations and tools address the essential tenets of Zero Trust, helping ensure a secure, compliant disaster recovery environment.
+ 
 
 | **Zero Trust Tenet**         | **Linux Lab Implementation Summary**                                   |
 | ---------------------------- | ---------------------------------------------------------------------- |
