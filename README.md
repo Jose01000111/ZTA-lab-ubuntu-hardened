@@ -28,7 +28,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 | **📈 Continuous Monitoring**    | 📋 Audit rules on key files, ⚙️ process accounting, ⏰ cron-based checks        |
 | **👤 User/Posture Enforcement** | 🔒 MFA enforced, 🚪 SSH access limited to authorized disaster recovery users |
 
-### 1. Create Disaster Recovery Users
+## 1️⃣. Create Disaster Recovery Users
    
 ![pznctXd](https://github.com/user-attachments/assets/2b99215b-dea1-4402-aa98-45f4962b641a)
 
@@ -41,7 +41,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 2. Create and Assign Groups for Role-Based Access
+## 2️⃣. Create and Assign Groups for Role-Based Access
 
 ![M2XoWff](https://github.com/user-attachments/assets/4aba9e65-8eb5-4202-a497-fc21465c0908)
 
@@ -54,7 +54,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 3. Lock Down SSH to Use Key-Based Authentication Only
+## 3️⃣. Lock Down SSH to Use Key-Based Authentication Only
    
 #### Edit /etc/ssh/sshd_config to include:
 
@@ -79,7 +79,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 4. Enforce Multi-Factor Authentication (MFA) with Google Authenticator
+## 4️⃣. Enforce Multi-Factor Authentication (MFA) with Google Authenticator
    
 #### Install PAM module:
 
@@ -104,7 +104,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 5. Configure Sudo Access Based on Roles
+## 5️⃣ . Configure Sudo Access Based on Roles
    
 #### Edit sudoers with sudo visudo to add:
 
@@ -116,7 +116,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 6. Enable and Configure Auditd for Monitoring Critical Files
+## 6️⃣. Enable and Configure Auditd for Monitoring Critical Files
 
 ![KaexAjO](https://github.com/user-attachments/assets/a02e04bf-e03e-4d96-8643-901206e596d6)
 
@@ -129,7 +129,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 7. Enforce Mandatory Access Controls with SELinux
+## 7️⃣. Enforce Mandatory Access Controls with SELinux
 
 ![6DSoEWu](https://github.com/user-attachments/assets/3a2fbcae-8ebd-4176-876d-6b2876bb6925)
 
@@ -140,7 +140,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 8. Restrict Network Traffic with Iptables
+## 8️⃣. Restrict Network Traffic with Iptables
    
 #### Flush rules and set default policy to DROP:
 
@@ -159,7 +159,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 9. Enable Command and System Activity Logging
+## 9️⃣ Enable Command and System Activity Logging
 
 ![cAzpZtv](https://github.com/user-attachments/assets/eaa80d94-af19-4e6c-8abd-ad4aba452a7b)
 
@@ -168,7 +168,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 10. Create Dynamic Security Response Script
+### 🔟. Create Dynamic Security Response Script
 
 #### Create /usr/local/bin/monitor_passwd.sh with the following:
 
