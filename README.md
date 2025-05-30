@@ -4,7 +4,7 @@
   <img src="https://github.com/user-attachments/assets/bfcd034f-553d-4a0c-b727-cf0e02f204f7" alt="dNzL2aq">
 </p>
 
-# I’m doing this lab to test Linux’s power and flexibility by tackling a real-world scenario. Our company, **Redwood Civic Technologies** 🏢, a government contractor, had its California data center taken offline by wildfires 🔥. We had to activate our warm site in Virginia 🌐 and quickly rebuild a critical system with **Zero Trust Architecture (ZTA)** 🔐 to meet government security requirements.
+## I’m doing this lab to test Linux’s power and flexibility by tackling a real-world scenario. Our company, **Redwood Civic Technologies** 🏢, a government contractor, had its California data center taken offline by wildfires 🔥. We had to activate our warm site in Virginia 🌐 and quickly rebuild a critical system with **Zero Trust Architecture (ZTA)** 🔐 to meet government security requirements.
 
 ### **Government requirements include:**
 
