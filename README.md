@@ -85,19 +85,13 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ![L6f3NCH](https://github.com/user-attachments/assets/b14e9927-a2ce-48bd-b82f-013a6f47c425)
 
------
-
 #### Edit /etc/pam.d/sshd and add:
 
 ![t5Qw5Y3](https://github.com/user-attachments/assets/84bf3eff-82b4-42f2-bfc6-8fc221532524)
 
------
-
 #### Confirm ChallengeResponseAuthentication yes in /etc/ssh/sshd_config and restart SSH.
 
 ![aTolmpB](https://github.com/user-attachments/assets/3e2915d6-70ba-42af-8521-88f37c286c37)
-
------
 
 #### Each user runs to set up MFA.
 
@@ -130,8 +124,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ![cRjI2CT](https://github.com/user-attachments/assets/2de3a030-1144-4f77-a8fa-60b898153402)
 
------
-
 #### Summary:
 #### I installed auditd to continuously monitor critical files like /etc/passwd and /etc/sudoers, so I can detect any unauthorized changes in real time.
 
@@ -154,8 +146,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ![l9tvVFc](https://github.com/user-attachments/assets/9ecaa589-c7b7-4eef-87e6-59ec826b044c)
 
------
-
 #### Allow essential traffic:
 
 ![23gopOV](https://github.com/user-attachments/assets/49a72fa3-bbe9-442e-9ad5-39de31815210)
@@ -173,10 +163,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ![cAzpZtv](https://github.com/user-attachments/assets/eaa80d94-af19-4e6c-8abd-ad4aba452a7b)
 
------
-
-
-
 #### Summary:
 #### I installed process accounting tools to log all command executions and system activities. This helps me continuously monitor user behavior and system events.
 
@@ -192,13 +178,9 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ![cAzpZtv](https://github.com/user-attachments/assets/b9820590-3ab9-4717-ab18-794b6938f2a3)
 
------
-
 #### Add line:
 
 ![AvurrZH](https://github.com/user-attachments/assets/846f5964-61dc-42e4-a9a3-0fec8cf3eca8)
-
------
 
 #### Summary:
 #### I automated monitoring of critical file changes and scripted an immediate lockdown of recovery user accounts if /etc/passwd is modified, proactively protecting against potential breaches.
