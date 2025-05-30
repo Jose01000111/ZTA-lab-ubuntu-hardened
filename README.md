@@ -4,7 +4,7 @@
   <img src="https://github.com/user-attachments/assets/bfcd034f-553d-4a0c-b727-cf0e02f204f7" alt="dNzL2aq">
 </p>
 
-## I’m doing this lab to test Linux’s power and flexibility by tackling a real-world scenario. Our company, **Redwood Civic Technologies** 🏢, a government contractor, had its California data center taken offline by wildfires 🔥. We had to activate our warm site in Virginia 🌐 and quickly rebuild a critical system with **Zero Trust Architecture (ZTA)** 🔐 to meet government security requirements.
+## I’m doing this lab to test Linux’s power and flexibility by tackling a simulated real-world scenario. Our company, **Redwood Civic Technologies** 🏢, a government contractor, had its California data center taken offline by wildfires 🔥. We had to activate our warm site in Virginia 🌐 and quickly rebuild a critical system with **Zero Trust Architecture (ZTA)** 🔐 only using our Linux Servers to meet government security requirements, while avoiding fines.
 
 ### **Government requirements include:**
 
@@ -14,7 +14,7 @@
   
 ### Mapping Zero Trust Tenets to Linux Implementation
 
-To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve mapped each core ZTA principle to specific Linux-based security controls and practices. This chart summarizes how the lab’s Linux configurations and tools address the essential tenets of Zero Trust, helping ensure a secure, compliant disaster recovery environment.
+To bring Zero Trust Architecture (ZTA) to life on a Linux CentOS server, I’ve mapped each core ZTA principle (with th help of AI) to specific Linux-based security controls and practices. This chart summarizes how the lab’s Linux configurations and tools address the essential tenets of Zero Trust, helping ensure a secure, compliant disaster recovery environment.
  
 
 | **Zero Trust Tenet**         | **Linux Lab Implementation Summary**                                   |
@@ -102,7 +102,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-## 5️⃣ . Configure Sudo Access Based on Roles
+## 5️⃣. Configure Sudo Access Based on Roles
    
 #### Edit sudoers with sudo visudo to add:
 
@@ -157,7 +157,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-## 9️⃣ Enable Command and System Activity Logging
+## 9️⃣. Enable Command and System Activity Logging
 
 ![cAzpZtv](https://github.com/user-attachments/assets/eaa80d94-af19-4e6c-8abd-ad4aba452a7b)
 
@@ -166,7 +166,7 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux Ubuntu server, I’ve 
 
 ----
 
-### 🔟. Create Dynamic Security Response Script
+## 🔟. Create Dynamic Security Response Script
 
 #### Create /usr/local/bin/monitor_passwd.sh with the following:
 
