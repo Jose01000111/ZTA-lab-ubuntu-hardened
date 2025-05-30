@@ -70,8 +70,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux CentOS server, I’ve 
 
 ![wwI8IXF](https://github.com/user-attachments/assets/3bdbdaf7-cfd6-4361-bd41-2d0c7c904fc5)
 
------
-
 #### Summary:
 #### I locked down SSH to disallow passwords and root login, allowing only my disaster recovery users to connect via SSH keys. This enhances security by preventing unauthorized password access.
 
@@ -95,8 +93,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux CentOS server, I’ve 
 
 ![t4aJtY5](https://github.com/user-attachments/assets/09e6a6b9-7f8c-4a57-bb52-c5b74623f168)
 
------
-
 #### Summary:
 #### I enabled MFA for SSH access using Google Authenticator. This requires users to provide a time-based code in addition to their SSH key, adding a strong second layer of identity verification.
 
@@ -108,7 +104,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux CentOS server, I’ve 
 
 ![ULJ4wY0](https://github.com/user-attachments/assets/df977c0d-27df-4e7f-932d-325a7cafc27e)
 
------
 #### Summary:
 #### I tailored sudo permissions to follow least-privilege principles. Jane and Sarah get limited commands for auditing, while Mike has full sudo rights for recovery tasks.
 
@@ -131,7 +126,6 @@ To bring Zero Trust Architecture (ZTA) to life on a Linux CentOS server, I’ve 
 
 ![6DSoEWu](https://github.com/user-attachments/assets/3a2fbcae-8ebd-4176-876d-6b2876bb6925)
 
------
 
 #### Summary:
 #### I enabled SELinux to enforce mandatory access controls on critical system services like SSH, restricting their capabilities to reduce risk from potential exploits.
